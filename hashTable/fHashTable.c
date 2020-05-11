@@ -4,11 +4,6 @@
 #include <string.h>
 #include "cowList.h"
 
-// The hash function will give you an int to where to look
-// Should use use all and just that data
-// No random numbers
-// You shouldn't use your own hash functions
-
 node *hashTable[26];
 
 int hash(char *s);
@@ -58,6 +53,13 @@ void init_table()
 
 void hashAdd(char *name)
 {
+    // The steps you need to take for a hash add is:
+    // make a temporary var of type node that is the correct index of the array.
+    // make a temporary node pointer varible.
+    // set tmp to be the add function whith the paramenter value. and the list node.
+    // put together the list node and the old list
+    // set the list varible to be the tmp
+    // make the actuall src varible the list.
     node *list = hashTable[hash(name)];
     node *tmp;
     tmp = addF(list, name);
